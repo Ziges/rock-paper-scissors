@@ -1,52 +1,57 @@
-(function () {
-    // your code here
+(function() {
+  // your code here
 
-    // let user = [];
-    // let randomWeapon = [];
+  let userWeapon = "";
 
 
-    document.getElementById("js-play").addEventListener("click", function () {
+  document.getElementById("js-play").addEventListener("click", function() {
 
-        // event.preventDefault();
-        function generateRandomWeapon (weapons) {
-            return weapons[Math.floor(Math.random()*weapons.length)];
-        }
-        const weapons = ["rock", "paper", "scissors"];
-
-        const randomWeapon = generateRandomWeapon(weapons);
-
-        console.log(randomWeapon);
-
-    });
-
-    function userChoice () {
-        let buttons = document.querySelectorAll(".weapon");
-
-        buttons.forEach(function (btn){
-            //add click event for each button, tap into innerhtml of that button.
-            btn.addEventListener("click", function (){
-
-                return btn.innerHTML;
-            });
-        });
+    // event.preventDefault();
+    function generateRandomWeapon(weapons) {
+      return weapons[Math.floor(Math.random() * weapons.length)];
     }
-    const userWeapon = userChoice();
-    console.log(userWeapon);
-    //
-    // if (randomWeapon == userWeapon) {
-    //     console.log("bingo");
-    // } else {
-    //     console.log("dam");
-    // }
+    const weapons = ["rock", "paper", "scissors"];
 
+    let computerWeapon = generateRandomWeapon(weapons);
+    console.log(computerWeapon);
+
+
+    if (computerWeapon == "paper" && userWeapon == "scissors") {
+      document.getElementById("win-or-lose").innerHTML = "You win!";
+    } else if (computerWeapon == "rock" && userWeapon == "paper") {
+      document.getElementById("win-or-lose").innerHTML = "You win!";
+    } else if (computerWeapon == "paper" && userWeapon == "rock") {
+      document.getElementById("win-or-lose").innerHTML = "Computer wins!";
+    } else if (computerWeapon == "rock" && userWeapon == "scissors") {
+      document.getElementById("win-or-lose").innerHTML = "Computer wins!";
+    } else if (computerWeapon == "scissors" && userWeapon == "rock") {
+      document.getElementById("win-or-lose").innerHTML = "You win!";
+    } else if (computerWeapon == "scissors" && userWeapon == "paper") {
+      document.getElementById("win-or-lose").innerHTML = "You win!";
+    } else {
+      document.getElementById("win-or-lose").innerHTML = "Draw! You both suck!";
+    }
+
+
+    setTimeout(function() {
+      document.getElementById("game-title").innerHTML = "To play again choose a new weapon!";
+    }, 2000);
+
+  });
+
+
+
+
+
+
+
+  let buttons = document.querySelectorAll(".weapon");
+  //add click event for each button, tap into innerhtml of that button, then save it in lastBtnClicked global variable
+  buttons.forEach(function(btn) {
+    btn.addEventListener("click", function() {
+      console.log(btn.innerHTML);
+      userWeapon = btn.innerHTML;
+    });
+  });
 
 })();
-
-
-// let buttons = document.querySelectorAll('.popupbutton')
-//
-// But you get an “Array” (NodeList) so:
-//
-//     buttons[0].addEventListener("click", function(){
-//         alert('hi')
-//     })
