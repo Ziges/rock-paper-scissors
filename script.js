@@ -35,7 +35,7 @@
 
     setTimeout(function() {
       document.getElementById("game-title").innerHTML = "To play again choose a new weapon!";
-    }, 2000);
+    }, 2500);
 
   });
 
