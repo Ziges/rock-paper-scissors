@@ -6,7 +6,6 @@
   //add click event for each button, tap into innerhtml of that button, then save it in userWeapon global variable
   buttons.forEach(function(btn) {
     btn.addEventListener("click", function() {
-      document.getElementById("player-result").innerHTML = "Your choice: " + btn.innerHTML ;
       userWeapon = btn.innerHTML;
     });
   });
@@ -25,33 +24,35 @@
 
     document.getElementById("machine-result").innerHTML = "Computer result: " + computerWeapon;
 
+    setTimeout(function() {
+      if (userWeapon == "scissors" && computerWeapon == "paper") {
+        document.getElementById("win-or-lose").innerHTML = "You win!";
+      }
+      else if (computerWeapon == "rock" && userWeapon == "paper") {
+        document.getElementById("win-or-lose").innerHTML = "You win!";
+      }
+      else if (computerWeapon == "paper" && userWeapon == "rock") {
+        document.getElementById("win-or-lose").innerHTML = "Computer wins!";
+      }
+      else if (userWeapon == "scissors" && computerWeapon == "rock") {
+        document.getElementById("win-or-lose").innerHTML = "Computer wins!";
+      }
+      else if (computerWeapon == "scissors" && userWeapon == "rock") {
+        document.getElementById("win-or-lose").innerHTML = "You win!";
+      }
+      else if (computerWeapon == "scissors" && userWeapon == "paper") {
+        document.getElementById("win-or-lose").innerHTML = "computer wins!";
+      }
+      else {
+        document.getElementById("win-or-lose").innerHTML = "Draw! You both suck!";
+      }
 
-    if (userWeapon == "scissors" && computerWeapon == "paper") {
-      document.getElementById("win-or-lose").innerHTML = "You win!";
-    }
-    else if (computerWeapon == "rock" && userWeapon == "paper") {
-      document.getElementById("win-or-lose").innerHTML = "You win!";
-    }
-    else if (computerWeapon == "paper" && userWeapon == "rock") {
-      document.getElementById("win-or-lose").innerHTML = "Computer wins!";
-    }
-    else if (userWeapon == "scissors" && computerWeapon == "rock") {
-      document.getElementById("win-or-lose").innerHTML = "Computer wins!";
-    }
-    else if (computerWeapon == "scissors" && userWeapon == "rock") {
-      document.getElementById("win-or-lose").innerHTML = "You win!";
-    }
-    else if (computerWeapon == "scissors" && userWeapon == "paper") {
-      document.getElementById("win-or-lose").innerHTML = "computer wins!";
-    }
-    else {
-      document.getElementById("win-or-lose").innerHTML = "Draw! You both suck!";
-    }
+    }, 1500);
 
 
     setTimeout(function() {
       document.getElementById("game-title").innerHTML = "Refresh page to play again!";
-    }, 1000);
+    }, 2000);
 
   });
 
