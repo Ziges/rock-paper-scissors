@@ -6,7 +6,7 @@
   //add click event for each button, tap into innerhtml of that button, then save it in userWeapon global variable
   buttons.forEach(function(btn) {
     btn.addEventListener("click", function() {
-      document.getElementById("player-result").innerHTML = "Your choice: " + btn.innerHTML;
+      document.getElementById("player-result").innerHTML = "Your choice: " + btn.innerHTML ;
       userWeapon = btn.innerHTML;
     });
   });
