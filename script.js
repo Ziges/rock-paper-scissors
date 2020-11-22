@@ -11,7 +11,7 @@
     });
   });
 
-  //when play button is col
+  //when play button is clicked 2 outcome messages are rendered as html p elements.
   document.getElementById("js-play").addEventListener("click", function() {
 
     // event.preventDefault();
@@ -51,7 +51,7 @@
 
     setTimeout(function() {
       document.getElementById("game-title").innerHTML = "Refresh page to play again!";
-    }, 1550);
+    }, 1000);
 
   });
 
