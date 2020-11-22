@@ -1,57 +1,61 @@
 (function() {
   // your code here
-
   let userWeapon = "";
 
+  let buttons = document.querySelectorAll(".weapon");
+  //add click event for each button, tap into innerhtml of that button, then save it in userWeapon global variable
+  buttons.forEach(function(btn) {
+    btn.addEventListener("click", function() {
+      document.getElementById("player-result").innerHTML = "Your choice: " + btn.innerHTML;
+      userWeapon = btn.innerHTML;
+    });
+  });
 
+  //when play button is col
   document.getElementById("js-play").addEventListener("click", function() {
 
     // event.preventDefault();
     function generateRandomWeapon(weapons) {
       return weapons[Math.floor(Math.random() * weapons.length)];
+
     }
     const weapons = ["rock", "paper", "scissors"];
 
     let computerWeapon = generateRandomWeapon(weapons);
-    console.log(computerWeapon);
+
+    document.getElementById("machine-result").innerHTML = "Computer result: " + computerWeapon;
 
 
-    if (computerWeapon == "paper" && userWeapon == "scissors") {
+    if (userWeapon == "scissors" && computerWeapon == "paper") {
       document.getElementById("win-or-lose").innerHTML = "You win!";
-    } else if (computerWeapon == "rock" && userWeapon == "paper") {
+    }
+    else if (computerWeapon == "rock" && userWeapon == "paper") {
       document.getElementById("win-or-lose").innerHTML = "You win!";
-    } else if (computerWeapon == "paper" && userWeapon == "rock") {
+    }
+    else if (computerWeapon == "paper" && userWeapon == "rock") {
       document.getElementById("win-or-lose").innerHTML = "Computer wins!";
-    } else if (computerWeapon == "rock" && userWeapon == "scissors") {
+    }
+    else if (userWeapon == "scissors" && computerWeapon == "rock") {
       document.getElementById("win-or-lose").innerHTML = "Computer wins!";
-    } else if (computerWeapon == "scissors" && userWeapon == "rock") {
+    }
+    else if (computerWeapon == "scissors" && userWeapon == "rock") {
       document.getElementById("win-or-lose").innerHTML = "You win!";
-    } else if (computerWeapon == "scissors" && userWeapon == "paper") {
-      document.getElementById("win-or-lose").innerHTML = "You win!";
-    } else {
+    }
+    else if (computerWeapon == "scissors" && userWeapon == "paper") {
+      document.getElementById("win-or-lose").innerHTML = "computer wins!";
+    }
+    else {
       document.getElementById("win-or-lose").innerHTML = "Draw! You both suck!";
     }
 
 
     setTimeout(function() {
-      document.getElementById("game-title").innerHTML = "To play again choose a new weapon!";
-    }, 2500);
+      document.getElementById("game-title").innerHTML = "Refresh page to play again!";
+    }, 1550);
 
   });
 
 
 
-
-
-
-
-  let buttons = document.querySelectorAll(".weapon");
-  //add click event for each button, tap into innerhtml of that button, then save it in lastBtnClicked global variable
-  buttons.forEach(function(btn) {
-    btn.addEventListener("click", function() {
-      console.log(btn.innerHTML);
-      userWeapon = btn.innerHTML;
-    });
-  });
 
 })();
