@@ -44,7 +44,7 @@
         document.getElementById("win-or-lose").innerHTML = "computer wins!";
       }
       else {
-        document.getElementById("win-or-lose").innerHTML = "Draw! You both suck!";
+        document.getElementById("win-or-lose").innerHTML = "Draw! Play again!";
       }
 
     }, 1500);
@@ -52,11 +52,8 @@
 
     setTimeout(function() {
       document.getElementById("game-title").innerHTML = "Refresh page to play again!";
-    }, 2000);
+    }, 2500);
 
   });
-
-
-
 
 })();

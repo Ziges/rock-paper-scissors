@@ -5,10 +5,10 @@
 body {
     text-align: center;
     background-color: #011F3F;
+    font-family: 'Press Start 2P', cursive;
 }
 
 #game-title {
-    font-family: 'Press Start 2P', cursive;
     font-size: 3rem;
     margin: 5%;
     color: #FEF2BF;
@@ -16,18 +16,19 @@ body {
 
 .instructions {
     font-family:'Ruslan Display', cursive;
-    font-size: 3rem;
+    font-size: 2rem;
     margin: 5%;
     color: #FEF2BF;
 }
 
 
-#js-play {
+#js-play, #js-refresh {
     font-family:'Ruslan Display', cursive;
-    font-size: 3rem;
+    font-size: 2rem;
     margin: 5%;
     color: #FEF2BF;
 }
+
 
 .container {
     display: block;
@@ -36,7 +37,7 @@ body {
 }
 
 
-.btn {
+.btn, .weapon {
     margin: 25px;
     display: inline-block;
     height: 200px;
@@ -44,7 +45,7 @@ body {
     border: 10px solid black;
     border-radius: 20%;
     background-color: cadetblue;
-    font-family: 'Ruslan Display', cursive;
-    font-size: 2rem;
+    font-size: 1.3rem;
     box-shadow: 0 0 20px white;
+    font-family: 'Press Start 2P', cursive;
 }
